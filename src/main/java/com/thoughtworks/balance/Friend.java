@@ -6,4 +6,14 @@ public class Friend
     private float amountToGive;
     private float amountOwes;
 
+    public Friend(String name, float amountToGive, float amountOwes)
+    {
+        this.name = name;
+        this.amountToGive = amountToGive;
+        this.amountOwes = amountOwes;
+    }
+
+    public Friend() {
+
+    }
 }
