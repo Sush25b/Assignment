@@ -4,13 +4,31 @@ import java.util.List;
 
  public class Bill
 {
-    public float amount;
+    public int optionNumber;
     FriendsSampleList friendsSampleList =new FriendsSampleList();
 
-    List<Friend> friendslist= friendsSampleList.getListOfFriends();
+    public Bill(int optionNumber) {
+        this.optionNumber = optionNumber;
+    }
 
     public  List<Friend> calculatedExpenses()
     {
-        return friendslist;
+        if(optionNumber==1)
+        {
+            return  friendsSampleList.getListOfFriends();
+        }
+        if(optionNumber==2)
+        {
+            return  friendsSampleList.getSecondListOfFriends();
+        }
+        if(optionNumber==3)
+        {
+            return  friendsSampleList.getThirdListOfFriends();
+        }
+        if(optionNumber==4)
+        {
+            return  friendsSampleList.getFourthListOfFriends();
+        }
+        return null;
     }
 }

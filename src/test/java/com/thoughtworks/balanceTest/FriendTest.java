@@ -18,34 +18,29 @@ public class FriendTest {
 
     FriendsSampleList friendsSampleList = new FriendsSampleList();  //Object of class
     List<Friend> friendslist;
-    List<Friend> friends;
+    Bill bill;
 
     //Initialize a New Empty Arraylist before each Testcase
     @BeforeEach
     public void setup(){
-             friends=new ArrayList<>();
-        System.out.println("hiiii");
+        friendslist=new ArrayList<>();
     }
 
     //Method: test to calculate that if All friend Expenses happen Zero
     @Test
     public void givenExpensesWhereZero_whenCalculated_thenReturnZeroGivenAndOwesForEach() {
         friendslist = friendsSampleList.getListOfFriends();
-
-        Assertions.assertEquals(friendslist, friendslist);
+        bill= new Bill(1);
+        Assertions.assertEquals(friendslist,friendslist);      //bill.calculatedExpenses()
     }
 
     //Method: To test that if All Expenses are paid by One member Only
     @Test
     public void givenAllExpensesWherePaidByOneForAllFriend_whenCalculated_thenReturnNonZeroOwesAndGive() {
+
         friendslist = friendsSampleList.getSecondListOfFriends();
-
-        friends.add(new Friend("A", 0.0f, 0.0f));
-        friends.add(new Friend("B", 0.0f, 0.0f));
-        friends.add(new Friend("C", 0.0f, 0.0f));
-        friends.add(new Friend("D", 0.0f, 0.0f));
-
-        Assertions.assertEquals(friendslist,friendslist);
+        bill= new Bill(2);
+        Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
 
     }
 
@@ -53,13 +48,17 @@ public class FriendTest {
     @Test
     public void givenExpensesPaidInRandomByMembers_whenCalculated_thenReturnGivenAndOwesOfEach() {
         friendslist = friendsSampleList.getThirdListOfFriends();
-
-        friends.add(new Friend("A", 100.0f, 75.0f));
-        friends.add(new Friend("B", 500.0f, 325.0f));
-        friends.add(new Friend("C", 100.0f, 275.0f));
-        friends.add(new Friend("D", 300.0f, 25.0f));
-
-        Assertions.assertEquals(friendslist,friendslist);
+        bill= new Bill(3);
+        Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
     }
 
+    //Method: test to calculate if each member Need to pay and Owes equal Amount of Money
+    @Test
+    public void givenExpensesPaidEquallyByEachMembers_whenCalculated_thenReturnGivenAndOwesAmountIsEqualForEach()
+    {
+        friendslist = friendsSampleList.getThirdListOfFriends();
+        bill=new Bill(4);
+
+        Assertions.assertEquals(friendslist, friendslist);        //bill.calculatedExpenses()
+    }
 }

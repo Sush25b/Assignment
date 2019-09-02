@@ -41,5 +41,17 @@ public class FriendsSampleList
         return friendslist;
     }
 
+    //Method: to get Sample List of friends for testing
+    public List<Friend> getFourthListOfFriends()
+    {
+        List<Friend> friendslist = new ArrayList<Friend>();
+
+        friendslist.add(new Friend("A", 400.0f, 300.0f));
+        friendslist.add(new Friend("B", 400.0f, 300.0f));
+        friendslist.add(new Friend("C", 400.0f, 300.0f));
+        friendslist.add(new Friend("D", 400.0f, 300.0f));
+        return friendslist;
+    }
+
 
 }
