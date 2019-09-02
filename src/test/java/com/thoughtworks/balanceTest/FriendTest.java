@@ -52,7 +52,7 @@ public class FriendTest {
         Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
     }
 
-    //Method: test to calculate if each member Need to pay and Owes equal Amount of Money
+    //Method: test to calculate Where Each member Need to pay and Owes equal Amount of Money
     @Test
     public void givenExpensesPaidEquallyByEachMembers_whenCalculated_thenReturnGivenAndOwesAmountIsEqualForEach()
     {
