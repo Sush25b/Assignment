@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FriendTest {
+public class BillTest {
 
     FriendsSampleList friendsSampleList = new FriendsSampleList();  //Object of class
     List<Friend> friendslist;

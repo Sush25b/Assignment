@@ -2,7 +2,7 @@ package com.thoughtworks.balance;
 
 import java.util.List;
 
- public class Bill
+ public class Bill implements Charges
 {
     public int optionNumber;
     FriendsSampleList friendsSampleList =new FriendsSampleList();
@@ -11,7 +11,8 @@ import java.util.List;
         this.optionNumber = optionNumber;
     }
 
-    public  List<Friend> calculatedExpenses()
+    @Override
+    public  List<Friend> calculateExpenses()
     {
         if(optionNumber==1)
         {

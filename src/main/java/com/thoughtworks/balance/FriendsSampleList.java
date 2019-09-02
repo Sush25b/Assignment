@@ -3,6 +3,8 @@ package com.thoughtworks.balance;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//These class contains methods which passes Sample List of FriendsList
 public class FriendsSampleList
 {
     //Method: to get Sample List of friends for testing
