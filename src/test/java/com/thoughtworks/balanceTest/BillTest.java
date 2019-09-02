@@ -62,12 +62,13 @@ public class BillTest {
         Assertions.assertEquals(friendslist, bill.calculatedExpenses());        //bill.calculatedExpenses()
     }
 
+    //Method: test to calculate Each member Owes how much Money
+    @Test
     private void findWhoPaysWhom()
     {
         Map<ExpensesType, Map<Friend,List<Friend>>> listOfExpense= friendsSampleList.getListOfBills();
         bill=new Bill();
         Assertions.assertEquals(listOfExpense,bill.calculatedExpenses());
     }
-
 
 }
