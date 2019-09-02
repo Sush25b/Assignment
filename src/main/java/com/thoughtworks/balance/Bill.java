@@ -1,13 +1,19 @@
 package com.thoughtworks.balance;
 
 import java.util.List;
+import java.util.Map;
 
- public class Bill implements Charges
+public class Bill implements Charges
 {
     public int optionNumber;
     FriendsSampleList friendsSampleList =new FriendsSampleList();
 
-    public Bill(int optionNumber) {
+    public Bill()
+    {
+    }
+
+    public Bill(int optionNumber)
+    {
         this.optionNumber = optionNumber;
     }
 
@@ -30,6 +36,14 @@ import java.util.List;
         {
             return  friendsSampleList.getFourthListOfFriends();
         }
+        if(optionNumber==5){
+
+        }
         return null;
+    }
+
+
+    public Map<ExpensesType, Map<Friend, List<Friend>>> calculatedExpenses() {
+        return friendsSampleList.getListOfBills();
     }
 }

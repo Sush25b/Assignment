@@ -1,7 +1,9 @@
 package com.thoughtworks.balance;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 
 //These class contains methods which passes Sample List of FriendsList
@@ -53,6 +55,25 @@ public class FriendsSampleList
         friendslist.add(new Friend("C", 400.0f, 300.0f));
         friendslist.add(new Friend("D", 400.0f, 300.0f));
         return friendslist;
+    }
+
+    //Method: to get Sample List of Bills
+    public Map<ExpensesType, Map<Friend,List<Friend>>> getListOfBills()
+    {
+        Friend friendWhoGiven=new Friend("A",0.0f,300.0f);
+
+        List<Friend> friendsNeedToPay = new ArrayList<Friend>();
+        friendsNeedToPay.add(new Friend("B", 400.0f, 300.0f));
+        friendsNeedToPay.add(new Friend("C", 400.0f, 300.0f));
+        friendsNeedToPay.add(new Friend("D", 400.0f, 300.0f));
+
+        Map<Friend,List<Friend>> ListWhoPaidForWhom = new LinkedHashMap<>();
+        ListWhoPaidForWhom.put(friendWhoGiven,friendsNeedToPay);
+
+        Map<ExpensesType, Map<Friend,List<Friend>>>  listOfExpenses= new LinkedHashMap<>();
+        listOfExpenses.put(ExpensesType.BUSTICKET,ListWhoPaidForWhom);
+
+        return listOfExpenses;
     }
 
 

@@ -1,6 +1,7 @@
 package com.thoughtworks.balanceTest;
 
 import com.thoughtworks.balance.Bill;
+import com.thoughtworks.balance.ExpensesType;
 import com.thoughtworks.balance.Friend;
 import com.thoughtworks.balance.FriendsSampleList;
 import org.hamcrest.Matcher;
@@ -10,9 +11,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.hamcrest.Matcher.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import java.lang.reflect.Executable;
+import java.util.*;
 
 public class BillTest {
 
@@ -31,7 +32,7 @@ public class BillTest {
     public void givenExpensesAsZero_whenCalculated_thenReturnZeroNeedToGiveAndOwesForEach() {
         friendslist = friendsSampleList.getListOfFriends();
         bill= new Bill(1);
-        Assertions.assertEquals(friendslist,friendslist);      //bill.calculatedExpenses()
+        Assertions.assertEquals(friendslist,bill.calculatedExpenses());      //bill.calculatedExpenses()
     }
 
     //Method: To test that if All Expenses are paid by One member Only
@@ -40,7 +41,7 @@ public class BillTest {
     {
         friendslist = friendsSampleList.getSecondListOfFriends();
         bill= new Bill(2);
-        Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
+        Assertions.assertEquals(friendslist, bill.calculatedExpenses());       //bill.calculatedExpenses()
     }
 
     //Method: test to calculate if All Expenses are paid in Random Order by Members
@@ -48,7 +49,7 @@ public class BillTest {
     public void givenExpensesPaidInRandomByAnyone_whenCalculated_thenReturnResultNeeToGiveAndOwesOfEach() {
         friendslist = friendsSampleList.getThirdListOfFriends();
         bill= new Bill(3);
-        Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
+        Assertions.assertEquals(friendslist, bill.calculatedExpenses());       //bill.calculatedExpenses()
     }
 
     //Method: test to calculate Where Each member Need to pay and Owes equal Amount of Money
@@ -58,6 +59,15 @@ public class BillTest {
         friendslist = friendsSampleList.getThirdListOfFriends();
         bill=new Bill(4);
 
-        Assertions.assertEquals(friendslist, friendslist);        //bill.calculatedExpenses()
+        Assertions.assertEquals(friendslist, bill.calculatedExpenses());        //bill.calculatedExpenses()
     }
+
+    private void findWhoPaysWhom()
+    {
+        Map<ExpensesType, Map<Friend,List<Friend>>> listOfExpense= friendsSampleList.getListOfBills();
+        bill=new Bill();
+        Assertions.assertEquals(listOfExpense,bill.calculatedExpenses());
+    }
+
+
 }
