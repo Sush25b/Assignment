@@ -28,7 +28,7 @@ public class BillTest {
 
     //Method: test to calculate that if All friend Expenses happen Zero
     @Test
-    public void givenExpensesWhereZero_whenCalculated_thenReturnZeroGivenAndOwesForEach() {
+    public void givenExpensesAsZero_whenCalculated_thenReturnZeroNeedToGiveAndOwesForEach() {
         friendslist = friendsSampleList.getListOfFriends();
         bill= new Bill(1);
         Assertions.assertEquals(friendslist,friendslist);      //bill.calculatedExpenses()
@@ -36,17 +36,16 @@ public class BillTest {
 
     //Method: To test that if All Expenses are paid by One member Only
     @Test
-    public void givenAllExpensesWherePaidByOneForAllFriend_whenCalculated_thenReturnNonZeroOwesAndGive() {
-
+    public void givenEveryOneExpensesPaidByOneFriend_whenCalculated_thenReturnNonZeroOwesAndNeedToGive()
+    {
         friendslist = friendsSampleList.getSecondListOfFriends();
         bill= new Bill(2);
         Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
-
     }
 
     //Method: test to calculate if All Expenses are paid in Random Order by Members
     @Test
-    public void givenExpensesPaidInRandomByMembers_whenCalculated_thenReturnGivenAndOwesOfEach() {
+    public void givenExpensesPaidInRandomByAnyone_whenCalculated_thenReturnResultNeeToGiveAndOwesOfEach() {
         friendslist = friendsSampleList.getThirdListOfFriends();
         bill= new Bill(3);
         Assertions.assertEquals(friendslist, friendslist);       //bill.calculatedExpenses()
@@ -54,7 +53,7 @@ public class BillTest {
 
     //Method: test to calculate Where Each member Need to pay and Owes equal Amount of Money
     @Test
-    public void givenExpensesPaidEquallyByEachMembers_whenCalculated_thenReturnGivenAndOwesAmountIsEqualForEach()
+    public void givenExpensesPaidEquallyByEachMember_whenCalculated_thenReturnNeedToGiveAndOwesIsEqualForEach()
     {
         friendslist = friendsSampleList.getThirdListOfFriends();
         bill=new Bill(4);
